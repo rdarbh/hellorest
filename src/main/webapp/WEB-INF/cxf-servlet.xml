@@ -23,17 +23,17 @@
 	<bean id="resourceWriter" class="com.wordnik.swagger.jaxrs.listing.ResourceListingProvider" />
 	<bean id="apiWriter" class="com.wordnik.swagger.jaxrs.listing.ApiDeclarationProvider" />
 		
-    <jaxrs:server id="helloService" address="/usteps">
+    	<jaxrs:server id="helloService" address="/usteps">
     		<jaxrs:serviceBeans>
     			<ref bean="helloRest" />
     			<ref bean="helloReality" />
-				<ref bean="swaggerResourceJSON" />
+			<ref bean="swaggerResourceJSON" />
     		</jaxrs:serviceBeans>
     		<jaxrs:providers>
     			<ref bean="resourceWriter" />
 				<ref bean="apiWriter" />
     		</jaxrs:providers>
-    </jaxrs:server>		
+    	</jaxrs:server>		
 
 	<!-- this scans the classes for resources -->
 	<bean id="swaggerConfig" class="com.wordnik.swagger.jaxrs.config.BeanConfig">
