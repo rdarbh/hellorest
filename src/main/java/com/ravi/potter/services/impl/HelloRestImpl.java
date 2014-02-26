@@ -37,7 +37,6 @@ public class HelloRestImpl implements HelloRest {
 	  @ApiResponse(code = 404, message = "Number not found") })
 	public Response isEven(@PathParam("number") Long number) {
 		logger.info("Number is {}", number);
-		System.out.println("Number is "+ number);
 		return Response.ok().entity((number%2==0)).build();
 	}
 	
@@ -50,7 +49,6 @@ public class HelloRestImpl implements HelloRest {
 	@ApiResponses(value = {
 	  @ApiResponse(code = 400, message = "Name not supplied")})
 	public Response sayHi(@PathParam("name") String name) {
-		System.out.println("Name is "+ name);
 		return Response.ok().entity("nuqneh "+name.trim()+", qaStaH nuq?\n\nTranslation: Hi "+name.trim()+", how are you?").build();
 	}
 
@@ -62,7 +60,6 @@ public class HelloRestImpl implements HelloRest {
 	  @ApiResponse(code = 400, message = "Name not supplied")})
 	public Response hookMeUpWithFabio(@PathParam("name") String name) {
 		logger.info("Date with Fabio is confirmed for {}", name);
-		System.out.println("Name is "+ name);
 		return Response.ok().entity(((1 + (int)(Math.random() * ((1000 - 1) + 1))) % 2 == 0) ? "Confirmed Date with Fabio" : "Sorry you are not Fabio\'s type").build();
 	}
 	
@@ -75,7 +72,6 @@ public class HelloRestImpl implements HelloRest {
 	  @ApiResponse(code = 400, message = "Name not supplied")})
 	public Response postToSeeIfIamLuke(@PathParam("name") String name) {
 		logger.info("Date with Fabio is confirmed for {}", name);
-		System.out.println("Name is "+ name);
 		return Response.ok().entity(((1 + (int)(Math.random() * ((1000 - 1) + 1))) % 2 == 0) ? "Darth Vader is your father" : "Sorry to say this but you are son of Jar Jar Binks").build();
 	}
 	
