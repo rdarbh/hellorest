@@ -7,6 +7,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.ravi.potter.services.HelloReality;
@@ -20,6 +22,8 @@ import com.wordnik.swagger.annotations.ApiResponses;
 @Produces(MediaType.TEXT_PLAIN)
 @Api(value = "/reality", description = "Sample of Reality as we know it")
 public class HelloRealityImpl implements HelloReality {
+	// SLF4J Logger
+	private static final Logger logger = LoggerFactory.getLogger(HelloRealityImpl.class);
 
 	@GET
 	@Path("/check/{name}")
@@ -29,7 +33,7 @@ public class HelloRealityImpl implements HelloReality {
 	  @ApiResponse(code = 400, message = "Name not supplied"),
 	  @ApiResponse(code = 404, message = "Name not found") })
 	public Response getRealityBlues(@PathParam("name") String name) {
-		System.out.println("Name is: "+ name);
+		logger.info("Name is: {}", name);
 		return Response.ok().entity(((1 + (int)(Math.random() * ((1000 - 1) + 1))) % 2 == 0) ? "You will be on welfare, sorry buddy" : "You will fire Donald Trump").build();
 	}
 
