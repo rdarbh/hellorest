@@ -40,9 +40,9 @@
 		<property name="resourcePackage" value="com.ravi.potter.services.impl" />
 		<property name="version" value="1.0.0" />
 		<property name="basePath" value="http://localhost:9090/hellorest/services/usteps" />
-		<property name="title" value="UPI - Provider Interface" />
-		<property name="description" value="USTEPS Provider Interface" />
-		<property name="contact" value="rdarbham@utah.gov" />
+		<property name="title" value="Utah - REST Interface" />
+		<property name="description" value="USTEPS REST Interface" />
+		<property name="contact" value="darbhamulla@gmail.com" />
 		<property name="license" value="Apache 2.0 License" />
 		<property name="licenseUrl" value="http://www.apache.org/licenses/LICENSE-2.0.html" />
 		<property name="scan" value="true" />
